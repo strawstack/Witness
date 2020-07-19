@@ -4,11 +4,11 @@ A web mockup of a specific Witness puzzle with an extra reward tacked on for com
 
 # Live Demo
 
-[View Live Demo](#)
+[View Live Demo](https://strawstack.github.io/Witness/)
 
 # Screenshot
 
-[![](./screenshot.png)](#)
+[![](./screenshot.png)](https://strawstack.github.io/Witness/)
 
 # Todo
 
@@ -33,4 +33,4 @@ A web mockup of a specific Witness puzzle with an extra reward tacked on for com
 
 - [ ] Make a script, so others can create their own encoded messages
 
-- [ ] Read encoded message from
+- [ ] Read encoded message from URL query parameters
