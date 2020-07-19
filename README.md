@@ -10,6 +10,18 @@ A web mockup of a specific Witness puzzle with an extra reward tacked on for com
 
 [![](./screenshot.png)](https://strawstack.github.io/Witness/)
 
+# How to Make a Custom Secret Message
+
+1. Clone this Repo.
+2. In `main.js`, edit the text that starts with `To create your own secret message...`.
+3. Uncomment the line that you have just modified.
+4. Open `index.html` in a browser.
+5. Enter a correct solution to the puzzle.
+6. Obtain your encoded message from the console.
+7. Append your custom encoding to the url as follows:
+`https://strawstack.github.io/Witness/?msg=[your_encoding_here]` (do not include the square brackets).
+8. Visiting the URL, and solving the puzzle, will cause your secret message to be displayed.
+
 # Todo
 
 - [x] If you're inside an intersection within a certain radius then let let marker float free to avoid snapping to row/col
