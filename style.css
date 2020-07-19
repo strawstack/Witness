@@ -1,0 +1,98 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+.page-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    background: #747278; /* Grey */
+}
+
+.board {
+    position: relative;
+    background: #96C3BC; /* Aqua */
+    border-radius: 12px;
+    width: 585px;
+    height: 585px;
+}
+.cell {
+    position: absolute;
+    background: #444444; /* Dark */
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rule {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+.red {
+    background: #EE4E30; /* Red */
+    box-shadow: 0px 0px 30px 5px rgba(238, 78, 48, 0.5);
+}
+.green {
+    background: #AAF787; /* Green */
+    box-shadow: 0px 0px 30px 5px rgba(170, 247, 135, 0.5);
+}
+.start {
+    position: absolute;
+    left: -27.5px;
+    top: 512.5px;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    background: #96C3BC;
+    pointer-events: none;
+}
+.start.active {
+    background: white;
+}
+.end {
+    position: absolute;
+    left: 562.5px;
+    top: -45px;
+    width: 45px;
+    height: 90px;
+    background: #96C3BC;
+    border-radius: 27.5px;
+    transform: rotate(45deg);
+}
+.rh-svg {
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    border: 1px solid white;
+}
+.circle.light {
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 50px 25px rgba(255, 255, 255, 0.5);
+}
+.marker {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.7;
+    pointer-events: none;
+}
+.marker.hidden {
+    opacity: 0;
+}
+.puzzle-line {
+    pointer-events: none;
+}
