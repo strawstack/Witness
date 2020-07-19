@@ -35,10 +35,8 @@ A web mockup of a specific Witness puzzle with an extra reward tacked on for com
     - [x] Hash wayPoints and XOR with secret
 - [x] Implement correct `fadePuzzleLine`
 - [x] Show box under puzzle with current decoded message
-
-- [ ] Read encoded message from URL query parameters
-
-- [ ] Make a script, so others can create their own encoded messages
+- [x] Read encoded message from URL query parameters
+- [x] Make a script, so others can create their own encoded messages
 
 - [ ] Line should stop on collision
     - [ ] Note: the mouse can leave below the collision and appear far away
