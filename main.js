@@ -314,7 +314,8 @@ function makeEncoded(wayPoints, message) {
     return btoa(intArrayToMessage(combine));
 }
 function getEncodedMessageOrDefault() {
-    const queryString = window.location.search;
+    const _queryString = window.location.search;
+    const queryString = _queryString.replace("%3D", "=");
     try {
         const regex = /\?msg=(.+?)($|&)/i;
         const msg = queryString.match(regex);
