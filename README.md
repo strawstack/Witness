@@ -4,11 +4,11 @@ A web mockup of a specific Witness puzzle with an extra reward tacked on for com
 
 # Live Demo
 
-[View Live Demo](https://strawstack.github.io/Witness/)
+[View Live Demo](https://strawstack.github.io/Witness/?msg=MxZCSVRUEWoMDRRdBREXNFpQUUJQGQZbWVdJEhBcChcQV1oCEw5WXUxZF0sIQV8RTUkXAh0eQhFGTBpcExcRWgZNW1xVHkZYFwIKBxcNbgBlUUZ4Z1IIcWo=)
 
 # Screenshot
 
-[![](./screenshot.png)](https://strawstack.github.io/Witness/)
+[![](./screenshot.png)](https://strawstack.github.io/Witness/?msg=MxZCSVRUEWoMDRRdBREXNFpQUUJQGQZbWVdJEhBcChcQV1oCEw5WXUxZF0sIQV8RTUkXAh0eQhFGTBpcExcRWgZNW1xVHkZYFwIKBxcNbgBlUUZ4Z1IIcWo=)
 
 # How to Make a Custom Secret Message
 
