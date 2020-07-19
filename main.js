@@ -242,7 +242,7 @@ function checkSolution(wayPoints) {
 function fadePuzzleLine(puzzleLine) {
     // Cause puzzle line to fade
     // Until player clicks start again
-    puzzleLine.setAttribute("d", "");
+    puzzleLine.style.opacity = 0;
 }
 function inStartArea(e) {
     const m = mousePosition(e);
@@ -318,6 +318,7 @@ function main() {
     const marker = document.querySelector(".marker");
     const start = document.querySelector(".start");
     const puzzleLine = document.querySelector(".puzzle-line");
+    const sm = document.querySelector("#secret-message");
 
     let wayPoints = [];
     let active = false;
@@ -336,7 +337,8 @@ function main() {
                 const result = checkSolution(wayPoints);
                 // This will be the success message/url or
                 // essentially a random string
-                console.log("Result:", result);
+                //console.log("Result:", result);
+                sm.innerHTML = result;
             }
         }
     });
@@ -344,19 +346,30 @@ function main() {
     const activate = () => {
         // Activate
         active = true;
+
+        puzzleLine.style.transition = "opacity 0s";
+        puzzleLine.className = "puzzle-line";
+        puzzleLine.style.opacity = 1;
+        puzzleLine.setAttribute("d", "");
+
+        start.style.transition = "background 0s";
         start.className = "start active";
         marker.className = "marker hidden";
+
         const startCoord = { r: 4, c: 0 };
         wayPoints = [startCoord];
     };
     const deactivate = e => {
         // Deactivate
+        start.style.transition = "background 2s";
         start.className = "start";
+
         marker.className = "marker";
         active = false;
         const pos = position(e);
         const point = nearestValidPoint(pos);
         finalPoint = point;
+        puzzleLine.style.transition = "opacity 2s";
         fadePuzzleLine(puzzleLine);
     };
     svg.addEventListener("click", e => {

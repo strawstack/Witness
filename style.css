@@ -2,14 +2,16 @@ html, body {
     padding: 0px;
     margin: 0px;
     height: 100%;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
 }
 .page-area {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100%;
     background: #747278; /* Grey */
+    padding: 50px 0px;
 }
 
 .board {
@@ -52,6 +54,7 @@ html, body {
     border-radius: 50%;
     background: #96C3BC;
     pointer-events: none;
+    transition: background 3s;
 }
 .start.active {
     background: white;
@@ -70,7 +73,7 @@ html, body {
     position: absolute;
     left: -50px;
     top: -50px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 .circle.light {
     width: 5px;
@@ -95,4 +98,37 @@ html, body {
 }
 .puzzle-line {
     pointer-events: none;
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+.intro-area {
+    margin: 10px 0px 50px 0px;
+    padding: 0px 40px;
+}
+.intro-area>p {
+    max-width: 500px;
+}
+.solution-area {
+    margin: 50px 0px 100px 0px;
+    padding: 0px 40px;
+}
+.solution-area>p {
+    max-width: 500px;
+    padding: 10px;
+    color: white;
+    background: #747278;
+}
+.signature {
+    position: relative;
+    height: 100px;
+}
+.signature>div {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+#secret-message {
+    color: #f5d67b; /* yellow */
+    text-shadow: 0px 0px 8px #f5d67b;
 }

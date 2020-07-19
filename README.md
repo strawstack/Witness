@@ -21,8 +21,7 @@ A web mockup of a specific Witness puzzle with an extra reward tacked on for com
     - [x] Final wayPoint to player
 - [x] Implement `checkSolution`
     - [x] Hash wayPoints and XOR with secret
-
-- [ ] Implement correct `fadePuzzleLine`
+- [x] Implement correct `fadePuzzleLine`
 
 - [ ] Line should stop on collision
     - [ ] Note: the mouse can leave below the collision and appear far away
