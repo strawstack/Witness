@@ -1,4 +1,4 @@
-const ENCODED_MESSAGE = "MxZCSVRUEUoMDRRdBREXMl9GWUUVSwpWW1lCVkpQBhIQVVoTRg5cQV0YFkZHB1E=";
+// MxZCSVRUEWoMDRRdBREXNFpQUUJQGQZbWVdJEhBcChcQV1oCEw5WXUxZF0sIQV8RTUkXAh0eQhFGTBpcExcRWgZNW1xVHkZYFwIKBxcNbgBlUUZ4Z1IIcWo=
 function mousePosition(e) {
     const t = e.target;
     const box = t.getBoundingClientRect();
@@ -230,7 +230,7 @@ function renderLine(wayPoints, point, puzzleLine) {
     const d_str = d.join(" ");
     puzzleLine.setAttribute("d", d_str);
 }
-function checkSolution(wayPoints) {
+function checkSolution(wayPoints, ENCODED_MESSAGE) {
     // Combine hash of wayPoints with secret string
     // to reveal success message
     const result = combineWayPointsWithEncodedMsg(
@@ -312,6 +312,16 @@ function makeEncoded(wayPoints, message) {
     }
     return btoa(intArrayToMessage(combine));
 }
+function getEncodedMessageOrDefault() {
+    const queryString = window.location.search;
+    try {
+        const regex = /\?msg=(.+?)($|&)/i;
+        const msg = queryString.match(regex);
+        return msg[1]; // First capture group
+    } catch(e) {
+        return DEFAULT_ENCODING;
+    }
+}
 
 function main() {
     const svg = document.querySelector(".rh-svg");
@@ -319,6 +329,8 @@ function main() {
     const start = document.querySelector(".start");
     const puzzleLine = document.querySelector(".puzzle-line");
     const sm = document.querySelector("#secret-message");
+
+    const ENCODED_MESSAGE = getEncodedMessageOrDefault();
 
     let wayPoints = [];
     let active = false;
@@ -334,11 +346,11 @@ function main() {
             const len = wayPoints.length;
             const last = wayPoints[len - 1];
             if (point.pos.row === -1 && point.pos.col === 5) {
-                const result = checkSolution(wayPoints);
+                const result = checkSolution(wayPoints, ENCODED_MESSAGE);
                 // This will be the success message/url or
                 // essentially a random string
-                //console.log("Result:", result);
                 sm.innerHTML = result;
+                // console.log(makeEncoded(wayPoints, "To create your own secret message, edit this text, uncomment this line, and obtain the encoded message from the console after correctly solving the puzzle"));
             }
         }
     });
